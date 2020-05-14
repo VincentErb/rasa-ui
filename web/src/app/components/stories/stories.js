@@ -41,8 +41,9 @@ function StoriesController($rootScope, $scope, $sce, Bot, Stories, Intents ) {
 
   $scope.addStory = function(params) {
     var newStory = {};
-    newStory.bot_id = $scope.bot.bot_id
-    newStory.story_name = "story_" + Math.floor(Date.now() / 1000);
+    newStory.bot_id = $scope.bot.bot_id;
+    var default_name = "story_" + Math.floor(Date.now() / 1000);
+    newStory.story_name = prompt("Please enter your story's name", default_name);
     newStory.story = "## " + newStory.story_name + "\n";
     
     Stories.save(newStory).$promise.then(function() {

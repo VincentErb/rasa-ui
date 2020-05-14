@@ -33,6 +33,7 @@ function TrainingController($scope, $rootScope, $interval, $http, Rasa_Status, B
   }
 
   $scope.trainUsingRawData = function () {
+    alert("coucou");
     let botToTrain = $scope.objectFindByKey($scope.botList, 'bot_id', $scope.bot.bot_id);
     $rootScope.trainings_under_this_process = 1;
     //TODO: Replace with API Factory method
